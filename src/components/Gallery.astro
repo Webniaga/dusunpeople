@@ -177,14 +177,14 @@
 						<div class="slide-caption">Dapur lengkap dengan kemudahan</div>
 					</div>
 					
-					<button class="slide-btn prev-btn" onclick="changeSlide('slideshow1', -1)">&#10094;</button>
-					<button class="slide-btn next-btn" onclick="changeSlide('slideshow1', 1)">&#10095;</button>
+					<button class="slide-btn prev-btn" data-slideshow="slideshow1" data-direction="-1">&#10094;</button>
+					<button class="slide-btn next-btn" data-slideshow="slideshow1" data-direction="1">&#10095;</button>
 					
 					<div class="slide-indicators">
-						<span class="indicator active" onclick="currentSlide('slideshow1', 1)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow1', 2)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow1', 3)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow1', 4)"></span>
+						<span class="indicator active" data-slideshow="slideshow1" data-slide="1"></span>
+						<span class="indicator" data-slideshow="slideshow1" data-slide="2"></span>
+						<span class="indicator" data-slideshow="slideshow1" data-slide="3"></span>
+						<span class="indicator" data-slideshow="slideshow1" data-slide="4"></span>
 					</div>
 				</div>
 			</div>
@@ -206,13 +206,13 @@
 						<div class="slide-caption">Area santai dan berkumpul</div>
 					</div>
 					
-					<button class="slide-btn prev-btn" onclick="changeSlide('slideshow2', -1)">&#10094;</button>
-					<button class="slide-btn next-btn" onclick="changeSlide('slideshow2', 1)">&#10095;</button>
+					<button class="slide-btn prev-btn" data-slideshow="slideshow2" data-direction="-1">&#10094;</button>
+					<button class="slide-btn next-btn" data-slideshow="slideshow2" data-direction="1">&#10095;</button>
 					
 					<div class="slide-indicators">
-						<span class="indicator active" onclick="currentSlide('slideshow2', 1)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow2', 2)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow2', 3)"></span>
+						<span class="indicator active" data-slideshow="slideshow2" data-slide="1"></span>
+						<span class="indicator" data-slideshow="slideshow2" data-slide="2"></span>
+						<span class="indicator" data-slideshow="slideshow2" data-slide="3"></span>
 					</div>
 				</div>
 			</div>
@@ -242,15 +242,15 @@
 						<div class="slide-caption">Pemandangan indah dari rumah terapung</div>
 					</div>
 					
-					<button class="slide-btn prev-btn" onclick="changeSlide('slideshow3', -1)">&#10094;</button>
-					<button class="slide-btn next-btn" onclick="changeSlide('slideshow3', 1)">&#10095;</button>
+					<button class="slide-btn prev-btn" data-slideshow="slideshow3" data-direction="-1">&#10094;</button>
+					<button class="slide-btn next-btn" data-slideshow="slideshow3" data-direction="1">&#10095;</button>
 					
 					<div class="slide-indicators">
-						<span class="indicator active" onclick="currentSlide('slideshow3', 1)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow3', 2)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow3', 3)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow3', 4)"></span>
-						<span class="indicator" onclick="currentSlide('slideshow3', 5)"></span>
+						<span class="indicator active" data-slideshow="slideshow3" data-slide="1"></span>
+						<span class="indicator" data-slideshow="slideshow3" data-slide="2"></span>
+						<span class="indicator" data-slideshow="slideshow3" data-slide="3"></span>
+						<span class="indicator" data-slideshow="slideshow3" data-slide="4"></span>
+						<span class="indicator" data-slideshow="slideshow3" data-slide="5"></span>
 					</div>
 				</div>
 			</div>
@@ -332,6 +332,26 @@
 
 	// Lightbox functionality
 	document.addEventListener('DOMContentLoaded', function() {
+		// Add event listeners for slideshow navigation buttons
+		const slideButtons = document.querySelectorAll('.slide-btn');
+		slideButtons.forEach(button => {
+			button.addEventListener('click', function() {
+				const slideshowId = this.getAttribute('data-slideshow');
+				const direction = parseInt(this.getAttribute('data-direction'));
+				changeSlide(slideshowId, direction);
+			});
+		});
+
+		// Add event listeners for slideshow indicators
+		const indicators = document.querySelectorAll('.indicator');
+		indicators.forEach(indicator => {
+			indicator.addEventListener('click', function() {
+				const slideshowId = this.getAttribute('data-slideshow');
+				const slideNumber = parseInt(this.getAttribute('data-slide'));
+				currentSlide(slideshowId, slideNumber);
+			});
+		});
+
 		const galleryItems = document.querySelectorAll('.gallery-item[data-lightbox], .slide[data-lightbox]');
 		const lightbox = document.getElementById('lightbox');
 		const lightboxImage = document.getElementById('lightbox-image');
