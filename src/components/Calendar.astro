@@ -1,0 +1,367 @@
+---
+---
+
+<section id="calendar" class="section calendar-section">
+	<div class="container">
+		<h2 class="section-title">📅 Kalendar Kekosongan</h2>
+		<p class="section-subtitle">Semak kekosongan tarikh dan rancang penginapan anda di Dusun People</p>
+		
+		<div class="calendar-container">
+			<div class="calendar-wrapper">
+				<div class="calendar-header">
+					<div class="calendar-info">
+						<h3>
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+								<line x1="16" y1="2" x2="16" y2="6"/>
+								<line x1="8" y1="2" x2="8" y2="6"/>
+								<line x1="3" y1="10" x2="21" y2="10"/>
+							</svg>
+							Kalendar Tempahan Dusun People
+						</h3>
+						<p>Lihat tarikh yang tersedia untuk tempahan. Tarikh yang berwarna menunjukkan slot yang telah ditempah.</p>
+					</div>
+				</div>
+				
+				<div class="calendar-iframe-container">
+					<iframe 
+						src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=UTC&showPrint=0&showTz=0&src=ZHVzdW5wZW9wbGU1MDBAZ21haWwuY29t&src=ZW4ubWFsYXlzaWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23c0ca33&color=%230b8043" 
+						style="border:solid 1px #777" 
+						width="100%" 
+						height="600" 
+						frameborder="0" 
+						scrolling="no"
+						title="Kalendar Kekosongan Dusun People">
+					</iframe>
+				</div>
+				
+				<div class="calendar-legend">
+					<h4>Panduan Kalendar:</h4>
+					<div class="legend-items">
+						<div class="legend-item">
+							<div class="legend-color booked"></div>
+							<span>Tarikh Ditempah</span>
+						</div>
+						<div class="legend-item">
+							<div class="legend-color available"></div>
+							<span>Tarikh Tersedia</span>
+						</div>
+						<div class="legend-item">
+							<div class="legend-color holiday"></div>
+							<span>Cuti Umum Malaysia</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="booking-reminder">
+				<div class="reminder-card">
+					<div class="reminder-icon">
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+						</svg>
+					</div>
+					<div class="reminder-content">
+						<h4>Ingin Membuat Tempahan?</h4>
+						<p>Hubungi kami melalui WhatsApp untuk mengesahkan kekosongan dan membuat tempahan.</p>
+						<a href="https://wa.me/60166065005?text=Salam,%20saya%20ingin%20semak%20kekosongan%20dan%20membuat%20tempahan%20di%20Dusun%20People" 
+						   class="btn btn-whatsapp" target="_blank">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+								<path d="M12 0C5.373 0 0 5.373 0 12c0 2.083.534 4.041 1.473 5.751L.057 23.487l6.188-1.617A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm5.894 17.258c-.297.835-1.477 1.533-2.421 1.737-.652.137-1.508.247-4.386-.911-3.105-1.25-5.118-4.389-5.272-4.592-.154-.203-1.259-1.673-1.259-3.193s.798-2.267 1.078-2.577c.28-.31.616-.386.821-.386s.411.008.59.01c.189.003.442-.072.693.528.256.614.87 2.121.947 2.275.077.154.128.334.026.534-.103.2-.154.324-.308.489-.154.165-.324.368-.463.494-.154.14-.315.294-.135.578.18.284.798 1.315 1.713 2.131 1.177.833 2.169 1.089 2.477 1.211.308.122.485.102.663-.062.179-.164.768-.897.973-1.205.205-.308.41-.257.693-.154.284.103 1.798.848 2.106 1.003.308.154.513.231.59.36.077.128.077.744-.22 1.582z"/>
+							</svg>
+							Tempah Sekarang
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.calendar-section {
+		background: var(--light-gray);
+	}
+
+	.calendar-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 350px;
+		gap: 40px;
+		align-items: start;
+	}
+
+	.calendar-wrapper {
+		background: white;
+		border-radius: 20px;
+		box-shadow: var(--shadow);
+		overflow: hidden;
+	}
+
+	.calendar-header {
+		padding: 30px;
+		background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
+		color: white;
+	}
+
+	.calendar-info h3 {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 12px;
+		color: white;
+	}
+
+	.calendar-info h3 svg {
+		color: var(--warm-beige);
+		stroke-width: 2;
+	}
+
+	.calendar-info p {
+		color: rgba(255, 255, 255, 0.9);
+		line-height: 1.6;
+		font-size: 1rem;
+	}
+
+	.calendar-iframe-container {
+		position: relative;
+		width: 100%;
+		height: 600px;
+		overflow: hidden;
+	}
+
+	.calendar-iframe-container iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+		display: block;
+	}
+
+	.calendar-legend {
+		padding: 25px 30px;
+		background: var(--warm-beige);
+		border-top: 1px solid #e0e0e0;
+	}
+
+	.calendar-legend h4 {
+		font-size: 1.1rem;
+		color: var(--forest-green);
+		margin-bottom: 15px;
+		font-weight: 600;
+	}
+
+	.legend-items {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.legend-item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 0.9rem;
+		color: var(--deep-brown);
+	}
+
+	.legend-color {
+		width: 16px;
+		height: 16px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+	}
+
+	.legend-color.booked {
+		background: #c0ca33;
+	}
+
+	.legend-color.available {
+		background: #f8f9fa;
+	}
+
+	.legend-color.holiday {
+		background: #0b8043;
+	}
+
+	.booking-reminder {
+		position: sticky;
+		top: 100px;
+	}
+
+	.reminder-card {
+		background: white;
+		padding: 30px;
+		border-radius: 20px;
+		box-shadow: var(--shadow);
+		text-align: center;
+		border: 2px solid var(--moss-green);
+	}
+
+	.reminder-icon {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	.reminder-icon svg {
+		color: var(--moss-green);
+		background: rgba(85, 107, 47, 0.1);
+		padding: 12px;
+		border-radius: 50%;
+		width: 56px;
+		height: 56px;
+	}
+
+	.reminder-content h4 {
+		font-size: 1.3rem;
+		color: var(--forest-green);
+		margin-bottom: 15px;
+		font-weight: 600;
+	}
+
+	.reminder-content p {
+		color: var(--deep-brown);
+		line-height: 1.6;
+		margin-bottom: 25px;
+		font-size: 1rem;
+	}
+
+	.reminder-content .btn {
+		width: 100%;
+		justify-content: center;
+		font-size: 1rem;
+		padding: 15px 20px;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 1024px) {
+		.calendar-container {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+
+		.booking-reminder {
+			position: static;
+		}
+
+		.reminder-card {
+			max-width: 500px;
+			margin: 0 auto;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.calendar-header {
+			padding: 25px 20px;
+		}
+
+		.calendar-info h3 {
+			font-size: 1.3rem;
+			flex-direction: column;
+			text-align: center;
+			gap: 8px;
+		}
+
+		.calendar-info p {
+			font-size: 0.95rem;
+			text-align: center;
+		}
+
+		.calendar-iframe-container {
+			height: 500px;
+		}
+
+		.calendar-legend {
+			padding: 20px;
+		}
+
+		.legend-items {
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		.reminder-card {
+			padding: 25px 20px;
+		}
+
+		.reminder-content h4 {
+			font-size: 1.2rem;
+		}
+
+		.reminder-content p {
+			font-size: 0.95rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.calendar-header {
+			padding: 20px 15px;
+		}
+
+		.calendar-info h3 {
+			font-size: 1.2rem;
+		}
+
+		.calendar-info p {
+			font-size: 0.9rem;
+		}
+
+		.calendar-iframe-container {
+			height: 450px;
+		}
+
+		.calendar-legend {
+			padding: 15px;
+		}
+
+		.calendar-legend h4 {
+			font-size: 1rem;
+		}
+
+		.legend-item {
+			font-size: 0.85rem;
+		}
+
+		.legend-color {
+			width: 14px;
+			height: 14px;
+		}
+
+		.reminder-card {
+			padding: 20px 15px;
+		}
+
+		.reminder-icon svg {
+			width: 48px;
+			height: 48px;
+			padding: 10px;
+		}
+
+		.reminder-content h4 {
+			font-size: 1.1rem;
+		}
+
+		.reminder-content p {
+			font-size: 0.9rem;
+		}
+
+		.reminder-content .btn {
+			font-size: 0.95rem;
+			padding: 12px 16px;
+		}
+	}
+
+	/* Extra small mobile */
+	@media (max-width: 360px) {
+		.calendar-iframe-container {
+			height: 400px;
+		}
+
+		.reminder-card {
+			padding: 15px;
+		}
+	}
+</style>
