@@ -19,7 +19,6 @@
 							</svg>
 							Kalendar Tempahan Dusun People
 						</h3>
-						
 					</div>
 				</div>
 				
@@ -33,25 +32,6 @@
 						scrolling="no"
 						title="Kalendar Kekosongan Dusun People">
 					</iframe>
-				</div>
-				
-				<div class="calendar-legend">
-					<h4>Panduan Kalendar:</h4>
-					<div class="legend-items">
-						<div class="legend-item">
-							<div class="legend-color booked"></div>
-							<span>Dalam Tempahan</span>
-						</div>
-            
-						<div class="legend-item">
-							<div class="legend-color available"></div>
-							<span>Tarikh Tersedia</span>
-						</div>
-						<div class="legend-item">
-							<div class="legend-color holiday"></div>
-							<span>Cuti Umum</span>
-						</div>
-					</div>
 				</div>
 			</div>
 			
@@ -112,19 +92,13 @@
 		gap: 12px;
 		font-size: 1.5rem;
 		font-weight: 600;
-		margin-bottom: 12px;
+		margin-bottom: 0;
 		color: white;
 	}
 
 	.calendar-info h3 svg {
 		color: var(--warm-beige);
 		stroke-width: 2;
-	}
-
-	.calendar-info p {
-		color: rgba(255, 255, 255, 0.9);
-		line-height: 1.6;
-		font-size: 1rem;
 	}
 
 	.calendar-iframe-container {
@@ -139,52 +113,6 @@
 		height: 100%;
 		border: none;
 		display: block;
-	}
-
-	.calendar-legend {
-		padding: 25px 30px;
-		background: var(--warm-beige);
-		border-top: 1px solid #e0e0e0;
-	}
-
-	.calendar-legend h4 {
-		font-size: 1.1rem;
-		color: var(--forest-green);
-		margin-bottom: 15px;
-		font-weight: 600;
-	}
-
-	.legend-items {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 20px;
-	}
-
-	.legend-item {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		font-size: 0.9rem;
-		color: var(--deep-brown);
-	}
-
-	.legend-color {
-		width: 16px;
-		height: 16px;
-		border-radius: 4px;
-		border: 1px solid #ccc;
-	}
-
-	.legend-color.booked {
-		background: #1a73e8;
-	}
-
-	.legend-color.available {
-		background: #f8f9fa;
-	}
-
-	.legend-color.holiday {
-		background: #0b8043;
 	}
 
 	.booking-reminder {
@@ -266,22 +194,8 @@
 			gap: 8px;
 		}
 
-		.calendar-info p {
-			font-size: 0.95rem;
-			text-align: center;
-		}
-
 		.calendar-iframe-container {
 			height: 500px;
-		}
-
-		.calendar-legend {
-			padding: 20px;
-		}
-
-		.legend-items {
-			flex-direction: column;
-			gap: 12px;
 		}
 
 		.reminder-card {
@@ -306,29 +220,8 @@
 			font-size: 1.2rem;
 		}
 
-		.calendar-info p {
-			font-size: 0.9rem;
-		}
-
 		.calendar-iframe-container {
 			height: 450px;
-		}
-
-		.calendar-legend {
-			padding: 15px;
-		}
-
-		.calendar-legend h4 {
-			font-size: 1rem;
-		}
-
-		.legend-item {
-			font-size: 0.85rem;
-		}
-
-		.legend-color {
-			width: 14px;
-			height: 14px;
 		}
 
 		.reminder-card {
