@@ -1,0 +1,248 @@
+---
+---
+
+<section class="section faq-section">
+	<div class="container">
+		<h2 class="section-title">❓ Soalan Lazim (FAQ)</h2>
+		<p class="section-subtitle">Jawapan kepada soalan yang kerap ditanya tentang penginapan kami</p>
+		
+		<div class="faq-container">
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>🕐 Bila waktu check-in dan check-out?</span>
+					<span class="faq-icon">+</span>
+				</button>
+				<div class="faq-answer">
+					<p><strong>Check-in:</strong> 2:00 petang</p>
+					<p><strong>Check-out:</strong> 6:00 petang</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>🧾 Bagaimana cara untuk membuat tempahan (booking)?</span>
+					<span class="faq-icon">+</span>
+				</button>
+				<div class="faq-answer">
+					<p><strong>Untuk mengesahkan tempahan:</strong></p>
+					<p>• Bayar deposit 50% dari harga pakej ke akaun berikut:</p>
+					<p><strong>Agrobank:</strong> 2002 0210 0004 1308<br>
+					<strong>Nama:</strong> Zarif Zainul</p>
+					<p>• Bayaran penuh perlu dibuat sehari sebelum check-in</p>
+					<p>• Tarikh akan dikunci setelah deposit diterima</p>
+					<p>• Hantar bukti pembayaran melalui WhatsApp</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>🍽️ Adakah sarapan, makan tengahari & makan malam disediakan?</span>
+					<span class="faq-icon">+</span>
+				</button>
+				<div class="faq-answer">
+					<p><strong>Sarapan:</strong> Disediakan seperti dinyatakan dalam setiap pakej</p>
+					<p><strong>Makan tengahari & malam:</strong> Tidak disediakan secara tetap</p>
+					<p><strong>❗ Jika ingin disediakan, hubungi:</strong></p>
+					<p><strong>Kak Nab:</strong> 📲 +60 11-3156 0283</p>
+					<p>➡️ Nyatakan jenis makanan (contoh: makanan kampung/barat) sekurang-kurangnya 2 hari sebelum tarikh menginap.</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>🔥 Boleh buat BBQ di sana?</span>
+					<span class="faq-icon">+</span>
+				</button>
+				<div class="faq-answer">
+					<p><strong>Ya, boleh!</strong></p>
+					<p>Peralatan BBQ lengkap disediakan.</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>🏊‍♂️ Apakah aktiviti yang tersedia di Dusun People?</span>
+					<span class="faq-icon">+</span>
+				</button>
+				<div class="faq-answer">
+					<p>• BBQ</p>
+					<p>• Kolam renang air bukit & mineral</p>
+					<p>• Berbasikal (cycling)</p>
+					<p>• Bersantai dalam suasana dusun yang tenang</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>📞 Siapa boleh saya hubungi jika kecemasan atau pertanyaan lanjut?</span>
+					<span class="faq-icon">+</span>
+				</button>
+				<div class="faq-answer">
+					<p><strong>📌 Emergency Contact:</strong></p>
+					<p><strong>Kak Nab:</strong> 📲 +60 11-3156 0283</p>
+					<p><strong>Azmie:</strong> 📲 +6011-5167 7200</p>
+					<p><strong>Tasnim:</strong> 📲 +6019-338 0218</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>📍 Di mana lokasi Rumah Rehat Dusun People?</span>
+					<span class="faq-icon">+</span>
+				</button>
+				<div class="faq-answer">
+					<p>Klik pautan Google Maps di bawah untuk lokasi:</p>
+					<p><a href="https://maps.app.goo.gl/NQ8HKiiMeaRLZiYt9" target="_blank" class="map-link">➡️ Lihat Lokasi di Google Maps</a></p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>🛒 Jika nak beli barang atau buat pesanan makanan sendiri, bagaimana?</span>
+					<span class="faq-icon">+</span>
+				</button>
+				<div class="faq-answer">
+					<p><strong>✅ Boleh gunakan servis penghantaran atau aplikasi:</strong></p>
+					<p><strong>Hafiz (Delivery):</strong> 📲 +60 10-246 0200</p>
+					<p><strong>Gunakan juga:</strong> FoodPanda atau HaloJe</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	function toggleFAQ(button) {
+		const faqItem = button.parentElement;
+		const answer = faqItem.querySelector('.faq-answer');
+		const icon = button.querySelector('.faq-icon');
+		
+		// Close all other FAQs
+		document.querySelectorAll('.faq-item').forEach(item => {
+			if (item !== faqItem) {
+				item.classList.remove('active');
+				item.querySelector('.faq-answer').style.maxHeight = '0';
+				item.querySelector('.faq-icon').textContent = '+';
+			}
+		});
+		
+		// Toggle current FAQ
+		if (faqItem.classList.contains('active')) {
+			faqItem.classList.remove('active');
+			answer.style.maxHeight = '0';
+			icon.textContent = '+';
+		} else {
+			faqItem.classList.add('active');
+			answer.style.maxHeight = answer.scrollHeight + 'px';
+			icon.textContent = '−';
+		}
+	}
+
+	// Attach event listeners to all FAQ buttons
+	document.addEventListener('DOMContentLoaded', function() {
+		document.querySelectorAll('.faq-question').forEach(button => {
+			button.addEventListener('click', function() {
+				toggleFAQ(this);
+			});
+		});
+	});
+</script>
+
+<style>
+	.faq-section {
+		background: var(--light-gray);
+	}
+
+	.faq-container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.faq-item {
+		background: white;
+		margin-bottom: 15px;
+		border-radius: 15px;
+		box-shadow: var(--shadow);
+		overflow: hidden;
+		transition: all 0.3s ease;
+	}
+
+	.faq-item:hover {
+		box-shadow: 0 8px 25px rgba(47, 79, 79, 0.1);
+	}
+
+	.faq-question {
+		width: 100%;
+		padding: 25px 30px;
+		background: none;
+		border: none;
+		text-align: left;
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: var(--forest-green);
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: all 0.3s ease;
+	}
+
+	.faq-question:hover {
+		background: var(--light-gray);
+	}
+
+	.faq-icon {
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: var(--moss-green);
+		transition: transform 0.3s ease;
+	}
+
+	.faq-item.active .faq-icon {
+		transform: rotate(45deg);
+	}
+
+	.faq-answer {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+	}
+
+	.faq-answer p {
+		padding: 0 30px 25px;
+		color: var(--deep-brown);
+		line-height: 1.6;
+		margin: 0 0 10px 0;
+	}
+
+	.faq-answer p:last-child {
+		margin-bottom: 0;
+	}
+
+	.map-link {
+		color: var(--moss-green);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.map-link:hover {
+		color: var(--forest-green);
+		text-decoration: underline;
+	}
+
+	@media (max-width: 768px) {
+		.faq-question {
+			padding: 20px;
+			font-size: 1rem;
+		}
+		
+		.faq-answer p {
+			padding: 0 20px 20px;
+		}
+		
+		.faq-icon {
+			font-size: 1.3rem;
+		}
+	}
+</style>

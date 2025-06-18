@@ -1,0 +1,71 @@
+---
+---
+
+<section id="reviews" class="section reviews-section">
+	<div class="container">
+		<h2 class="section-title">Ulasan Pelanggan</h2>
+		<p class="section-subtitle">Lihat apa kata tetamu-tetamu kami tentang pengalaman menginap di Dusun People</p>
+		
+		<div class="reviews-container">
+			<!-- Elfsight Google Reviews | Untitled Google Reviews -->
+			<script src="https://static.elfsight.com/platform/platform.js" async></script>
+			<div class="elfsight-app-be3896f9-c882-4fa1-9a7e-7194864f614e" data-elfsight-app-lazy></div>
+		</div>
+		
+		<div class="reviews-cta">
+			<p>Sudah menginap dengan kami? Kongsi pengalaman anda!</p>
+			<a href="https://wa.me/60166065005?text=Salam,%20saya%20ingin%20berkongsi%20ulasan%20tentang%20penginapan%20di%20Dusun%20People" 
+			   class="btn btn-primary" target="_blank">Hantar Ulasan</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.reviews-section {
+		background: var(--light-gray);
+	}
+
+	.reviews-container {
+		max-width: 1000px;
+		margin: 0 auto 3rem;
+		padding: 0 1rem;
+	}
+
+	.reviews-cta {
+		text-align: center;
+		background: white;
+		padding: 2rem;
+		border-radius: 15px;
+		box-shadow: var(--shadow);
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.reviews-cta p {
+		font-size: 1.1rem;
+		color: var(--deep-brown);
+		margin-bottom: 1.5rem;
+		font-weight: 500;
+	}
+
+	/* Ensure Elfsight widget is responsive */
+	.reviews-container [data-elfsight-app-lazy] {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	@media (max-width: 768px) {
+		.reviews-container {
+			padding: 0;
+		}
+		
+		.reviews-cta {
+			padding: 1.5rem;
+			margin: 0 1rem;
+		}
+		
+		.reviews-cta p {
+			font-size: 1rem;
+		}
+	}
+</style>

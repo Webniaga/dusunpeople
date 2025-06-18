@@ -1,0 +1,656 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Penginapan tenang dalam dusun dengan kolam air bukit & mineral - Rumah Rehat Dusun People" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="/">
+            <i class="fas fa-home"></i>
+            <span>Dusun People</span>
+          </a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="/">Utama</a></li>
+          <li><a href="#packages">Pakej</a></li>
+          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#contact">Hubungi</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/60166065005" class="whatsapp-float" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3><i class="fas fa-home"></i> Dusun People</h3>
+            <p>Penginapan tenang dalam dusun dengan kolam air bukit & mineral yang segar.</p>
+            <div class="social-media">
+              <a href="https://www.tiktok.com/@dusunpeople" target="_blank" rel="noopener" class="social-link">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Pautan Pantas</h4>
+            <ul>
+              <li><a href="/">Utama</a></li>
+              <li><a href="#packages">Pakej</a></li>
+              <li><a href="#gallery">Galeri</a></li>
+              <li><a href="#contact">Hubungi</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Hubungi Kami</h4>
+            <div align="center" class="contact-info">
+              <a href="https://wa.me/60166065005"><p><i class="fab fa-whatsapp"></i> +60166065005</p></a>
+              
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Rumah Rehat Dusun People. Semua hak terpelihara.</p>
+          <div class="footer-credits">
+            <p>Design & Powered by <a href="https://webniaga.my" target="_blank" rel="noopener">webniaga.my</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      navToggle?.addEventListener('click', () => {
+        navMenu?.classList.toggle('active');
+        navToggle?.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu?.classList.remove('active');
+          navToggle?.classList.remove('active');
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            // Account for fixed navbar height
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.offsetTop - navbarHeight - 20;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Scroll to top functionality
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      
+      // Show/hide scroll to top button based on scroll position
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn?.classList.add('visible');
+        } else {
+          scrollToTopBtn?.classList.remove('visible');
+        }
+      });
+
+      // Scroll to top when button is clicked
+      scrollToTopBtn?.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --forest-green: #2f4f4f;
+    --moss-green: #556b2f;
+    --warm-beige: #f5f5dc;
+    --deep-brown: #3e2f21;
+    --light-green: #8fbc8f;
+    --light-gray: #f8f9fa;
+    --cream: #fffef7;
+    --shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    line-height: 1.6;
+    color: var(--deep-brown);
+    background-color: var(--cream);
+  }
+
+  /* Navigation */
+  .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px var(--shadow);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--forest-green);
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .nav-logo i {
+    color: var(--moss-green);
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+    color: var(--deep-brown);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-menu a:hover {
+    color: var(--moss-green);
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+  }
+
+  .nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--forest-green);
+    transition: 0.3s;
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* WhatsApp Float Button */
+  .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .whatsapp-float:hover {
+    background: #20ba5a;
+    transform: scale(1.1);
+  }
+
+  /* Scroll to Top Button */
+  .scroll-to-top {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    left: 20px;
+    background: var(--forest-green);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(47, 79, 79, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+  }
+
+  .scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .scroll-to-top:hover {
+    background: var(--moss-green);
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(47, 79, 79, 0.5);
+  }
+
+  .scroll-to-top:active {
+    transform: scale(0.95);
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--forest-green);
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section h3,
+  .footer-section h4 {
+    margin-bottom: 1rem;
+    color: var(--warm-beige);
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: var(--light-green);
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25d366;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .whatsapp-btn:hover {
+    background: #20ba5a;
+    transform: translateY(-2px);
+  }
+
+  /* Social Media */
+  .social-media {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white !important;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .social-link:hover {
+    background: var(--moss-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(85, 107, 47, 0.3);
+  }
+
+  .social-link i.fa-tiktok {
+    font-size: 16px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.8;
+  }
+
+  .footer-credits {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-credits a {
+    color: var(--warm-beige);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .footer-credits a:hover {
+    color: var(--light-green);
+    text-decoration: underline;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 0 1rem;
+    }
+
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      flex-direction: column;
+      background: white;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px var(--shadow);
+      padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+      left: 0;
+    }
+
+    .nav-toggle {
+      display: flex;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .footer-credits {
+      font-size: 0.8rem;
+    }
+
+    /* Adjust floating buttons for mobile */
+    .scroll-to-top {
+      width: 45px;
+      height: 45px;
+      font-size: 16px;
+      bottom: 90px; /* Position above WhatsApp button */
+      left: 15px;
+    }
+
+    .whatsapp-float {
+      width: 55px;
+      height: 55px;
+      font-size: 22px;
+      bottom: 15px;
+      right: 15px;
+    }
+
+    .social-media {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .scroll-to-top {
+      width: 40px;
+      height: 40px;
+      font-size: 14px;
+      bottom: 85px;
+      left: 10px;
+    }
+
+    .whatsapp-float {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
+    }
+
+    .social-link i.fa-tiktok {
+      font-size: 14px;
+    }
+  }
+
+  /* Utility Classes */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--forest-green);
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--deep-brown);
+    opacity: 0.8;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--moss-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .btn:hover {
+    background: var(--forest-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--shadow);
+  }
+
+  .btn-primary {
+    background: var(--forest-green);
+  }
+
+  .btn-primary:hover {
+    background: var(--moss-green);
+  }
+
+  .btn-whatsapp {
+    background: #25d366;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-whatsapp:hover {
+    background: #20ba5a;
+  }
+
+  .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px var(--shadow);
+    padding: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .section {
+      padding: 3rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>
