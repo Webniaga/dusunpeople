@@ -4,7 +4,7 @@
 <section id="contact" class="section">
 	<div class="container">
 		<h2 class="section-title">Hubungi Kami</h2>
-		<p class="section-subtitle">Tempah sekarang atau tanya soalan tentang penginapan kami</p>
+		<p class="section-subtitle">Maklumat hubungan dan sokongan pelanggan</p>
 		
 		<div class="contact-content">
 			<div class="contact-info">
@@ -65,117 +65,22 @@
 					</div>
 				</div>
 			</div>
-			
-			<div class="booking-form">
-				<div class="form-container">
-					<h3>Semak Kekosongan & Tempah</h3>
-					<form class="contact-form" id="bookingForm">
-						<div class="form-group">
-							<label for="name">Nama Penuh</label>
-							<input type="text" id="name" name="name" required>
-						</div>
-						
-						<div class="form-group">
-							<label for="phone">Nombor Telefon</label>
-							<input type="tel" id="phone" name="phone" required>
-						</div>
-						
-						<div class="form-row">
-							<div class="form-group">
-								<label for="checkin">Tarikh Check-in</label>
-								<input type="date" id="checkin" name="checkin" required>
-							</div>
-							
-							<div class="form-group">
-								<label for="checkout">Tarikh Check-out</label>
-								<input type="date" id="checkout" name="checkout" required>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="package">Pakej Pilihan</label>
-							<select id="package" name="package" required>
-								<option value="">Pilih Pakej</option>
-								<option value="Package Keluarga (RM1,500)">Package Keluarga (RM1,500)</option>
-								<option value="Package Healing (RM1,080)">Package Healing (RM1,080)</option>
-								<option value="Package Rumah Zafiqha - Rumah Terapung (RM480)">Package Rumah Zafiqha - Rumah Terapung (RM480)</option>
-								<option value="Package Rumah Zafirah + Zafiqha (RM800)">Package Rumah Zafirah + Zafiqha (RM800)</option>
-								<option value="Package Rumah Zanina & Zhufairah (RM700)">Package Rumah Zanina & Zhufairah (RM700)</option>
-								<option value="Package Rumah Zafirah & Zanina/Zhufairah (RM700)">Package Rumah Zafirah & Zanina/Zhufairah (RM700)</option>
-								<option value="Rumah Zhufairah - Individu (RM380)">Rumah Zhufairah - Individu (RM380)</option>
-								<option value="Rumah Zanina - Individu (RM380)">Rumah Zanina - Individu (RM380)</option>
-								<option value="Rumah Zafirah - Individu (RM380)">Rumah Zafirah - Individu (RM380)</option>
-								<option value="Package Terapung (RM800)">Package Terapung (RM800)</option>
-								<option value="Package Half Day (RM250)">Package Half Day (RM250)</option>
-							</select>
-						</div>
-						
-						<div class="form-group">
-							<label for="guests">Bilangan Tetamu</label>
-							<input type="number" id="guests" name="guests" min="1" max="30" required>
-						</div>
-						
-						<div class="form-group">
-							<label for="message">Mesej Tambahan</label>
-							<textarea id="message" name="message" rows="4" placeholder="Sebarang permintaan khas atau soalan..."></textarea>
-						</div>
-						
-						<button type="submit" class="btn btn-whatsapp form-submit">
-							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-								<path d="M12 0C5.373 0 0 5.373 0 12c0 2.083.534 4.041 1.473 5.751L.057 23.487l6.188-1.617A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm5.894 17.258c-.297.835-1.477 1.533-2.421 1.737-.652.137-1.508.247-4.386-.911-3.105-1.25-5.118-4.389-5.272-4.592-.154-.203-1.259-1.673-1.259-3.193s.798-2.267 1.078-2.577c.28-.31.616-.386.821-.386s.411.008.59.01c.189.003.442-.072.693.528.256.614.87 2.121.947 2.275.077.154.128.334.026.534-.103.2-.154.324-.308.489-.154.165-.324.368-.463.494-.154.14-.315.294-.135.578.18.284.798 1.315 1.713 2.131 1.177.833 2.169 1.089 2.477 1.211.308.122.485.102.663-.062.179-.164.768-.897.973-1.205.205-.308.41-.257.693-.154.284.103 1.798.848 2.106 1.003.308.154.513.231.59.36.077.128.077.744-.22 1.582z"/>
-							</svg>
-							Hantar ke WhatsApp
-						</button>
-					</form>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
 
-<script>
-	document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
-		e.preventDefault();
-		
-		const formData = new FormData(this);
-		const name = formData.get('name');
-		const phone = formData.get('phone');
-		const checkin = formData.get('checkin');
-		const checkout = formData.get('checkout');
-		const package_type = formData.get('package');
-		const guests = formData.get('guests');
-		const message = formData.get('message');
-		
-		const whatsappMessage = `Salam, saya ingin membuat tempahan:
-
-👤 Nama: ${name}
-📱 Telefon: ${phone}
-📅 Check-in: ${checkin}
-📅 Check-out: ${checkout}
-🏡 Pakej: ${package_type}
-👥 Bilangan Tetamu: ${guests}
-💬 Mesej: ${message || 'Tiada'}
-
-Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
-		
-		const encodedMessage = encodeURIComponent(whatsappMessage);
-		const whatsappUrl = `https://wa.me/60166065005?text=${encodedMessage}`;
-		
-		window.open(whatsappUrl, '_blank');
-	});
-</script>
-
 <style>
 	.contact-content {
 		display: grid;
-		grid-template-columns: 1fr 1.5fr;
-		gap: 60px;
-		align-items: start;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 30px;
+		max-width: 1000px;
+		margin: 0 auto;
 	}
 
 	.contact-info {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 25px;
 	}
 
@@ -278,114 +183,15 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 		font-size: 18px;
 	}
 
-	.form-container {
-		background: white;
-		padding: 40px;
-		border-radius: 20px;
-		box-shadow: var(--shadow);
-	}
-
-	.form-container h3 {
-		font-size: 1.5rem;
-		color: var(--forest-green);
-		margin-bottom: 25px;
-		text-align: center;
-		font-weight: 600;
-	}
-
-	.contact-form {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
-
-	.form-row {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 15px;
-	}
-
-	.form-group {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.form-group label {
-		font-weight: 500;
-		color: var(--deep-brown);
-		margin-bottom: 8px;
-		font-size: 0.95rem;
-	}
-
-	.form-group input,
-	.form-group select,
-	.form-group textarea {
-		padding: 12px 15px;
-		border: 2px solid #e0e0e0;
-		border-radius: 10px;
-		font-family: inherit;
-		font-size: 1rem;
-		transition: border-color 0.3s ease;
-		width: 100%;
-		box-sizing: border-box;
-	}
-
-	.form-group input:focus,
-	.form-group select:focus,
-	.form-group textarea:focus {
-		outline: none;
-		border-color: var(--moss-green);
-	}
-
-	.form-group textarea {
-		resize: vertical;
-		min-height: 100px;
-	}
-
-	.form-submit {
-		width: 100%;
-		margin-top: 10px;
-		font-size: 1.1rem;
-		padding: 15px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 10px;
-	}
-
-	/* Tablet View */
-	@media (max-width: 1024px) {
-		.contact-content {
-			gap: 40px;
-		}
-		
-		.form-container {
-			padding: 30px;
-		}
-	}
-
-	/* Mobile View - Main Breakpoint */
+	/* Responsive Design */
 	@media (max-width: 768px) {
 		.contact-content {
 			grid-template-columns: 1fr;
-			gap: 30px;
+			gap: 25px;
 		}
 		
 		.contact-info {
-			order: 2;
-		}
-		
-		.booking-form {
-			order: 1;
-		}
-		
-		.form-container {
-			padding: 25px;
-		}
-		
-		.form-container h3 {
-			font-size: 1.3rem;
-			margin-bottom: 20px;
+			grid-template-columns: 1fr;
 		}
 		
 		.contact-card {
@@ -401,27 +207,6 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 			width: 28px;
 			height: 28px;
 		}
-		
-		.form-row {
-			grid-template-columns: 1fr;
-			gap: 20px;
-		}
-		
-		.contact-form {
-			gap: 18px;
-		}
-		
-		.form-group input,
-		.form-group select,
-		.form-group textarea {
-			padding: 14px 15px;
-			font-size: 16px; /* Prevents zoom on iOS */
-		}
-		
-		.form-submit {
-			padding: 16px;
-			font-size: 1rem;
-		}
 
 		.social-links {
 			flex-direction: column;
@@ -435,21 +220,7 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 		}
 	}
 
-	/* Small Mobile View */
 	@media (max-width: 480px) {
-		.container {
-			padding: 0 1rem;
-		}
-		
-		.form-container {
-			padding: 20px;
-			border-radius: 15px;
-		}
-		
-		.form-container h3 {
-			font-size: 1.2rem;
-		}
-		
 		.contact-card {
 			padding: 20px;
 		}
@@ -468,22 +239,6 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 			height: 24px;
 		}
 		
-		.form-group label {
-			font-size: 0.9rem;
-		}
-		
-		.form-group input,
-		.form-group select,
-		.form-group textarea {
-			padding: 12px;
-			font-size: 16px;
-		}
-		
-		.form-submit {
-			padding: 14px;
-			font-size: 0.95rem;
-		}
-		
 		.btn {
 			padding: 12px 20px;
 			font-size: 0.9rem;
@@ -499,39 +254,9 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 		}
 	}
 
-	/* Extra Small Mobile View */
 	@media (max-width: 360px) {
-		.form-container {
-			padding: 15px;
-		}
-		
 		.contact-card {
 			padding: 15px;
-		}
-		
-		.form-group input,
-		.form-group select,
-		.form-group textarea {
-			padding: 10px 12px;
-		}
-		
-		.form-submit {
-			padding: 12px;
-		}
-	}
-
-	/* Landscape Mobile View */
-	@media (max-width: 768px) and (orientation: landscape) {
-		.contact-content {
-			gap: 25px;
-		}
-		
-		.form-container {
-			padding: 20px;
-		}
-		
-		.contact-card {
-			padding: 20px;
 		}
 	}
 </style>
