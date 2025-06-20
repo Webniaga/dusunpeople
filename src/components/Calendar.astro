@@ -22,6 +22,37 @@
 					</div>
 				</div>
 				
+				<!-- Calendar Legend -->
+				<div class="calendar-legend">
+					<h4>📋 Keterangan Warna Kalendar:</h4>
+					<div class="legend-grid">
+						<div class="legend-item">
+							<span class="legend-color" style="background-color: #2196F3;"></span>
+							<span class="legend-text">🔵 Pakej Healing</span>
+						</div>
+						<div class="legend-item">
+							<span class="legend-color" style="background-color: #9C27B0;"></span>
+							<span class="legend-text">🟣 Pakej Keluarga</span>
+						</div>
+						<div class="legend-item">
+							<span class="legend-color" style="background-color: #F44336;"></span>
+							<span class="legend-text">🔴 Pakej Duo</span>
+						</div>
+						<div class="legend-item">
+							<span class="legend-color" style="background-color: #4CAF50;"></span>
+							<span class="legend-text">🟢 Pakej Individu</span>
+						</div>
+						<div class="legend-item">
+							<span class="legend-color" style="background-color: #9E9E9E;"></span>
+							<span class="legend-text">⚫ Maintenance</span>
+						</div>
+						<div class="legend-item">
+							<span class="legend-color" style="background-color: #FFEB3B;"></span>
+							<span class="legend-text">🟡 Take Out (opsyenal)</span>
+						</div>
+					</div>
+				</div>
+				
 				<div class="calendar-iframe-container">
 					<iframe 
 						src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=UTC&showPrint=0&showTz=0&src=ZHVzdW5wZW9wbGU1MDBAZ21haWwuY29t&src=ZW4ubWFsYXlzaWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23c0ca33&color=%230b8043" 
@@ -175,6 +206,57 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 		stroke-width: 2;
 	}
 
+	/* Calendar Legend Styles */
+	.calendar-legend {
+		padding: 25px 30px;
+		background: var(--warm-beige);
+		border-bottom: 1px solid #e0e0e0;
+	}
+
+	.calendar-legend h4 {
+		color: var(--forest-green);
+		font-size: 1.1rem;
+		font-weight: 600;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+
+	.legend-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 12px;
+	}
+
+	.legend-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 8px 12px;
+		background: white;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+	}
+
+	.legend-item:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	.legend-color {
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		flex-shrink: 0;
+		border: 2px solid rgba(0, 0, 0, 0.1);
+	}
+
+	.legend-text {
+		font-size: 0.9rem;
+		color: var(--deep-brown);
+		font-weight: 500;
+	}
+
 	.calendar-iframe-container {
 		position: relative;
 		width: 100%;
@@ -283,6 +365,28 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 			gap: 8px;
 		}
 
+		.calendar-legend {
+			padding: 20px 15px;
+		}
+
+		.calendar-legend h4 {
+			font-size: 1rem;
+			margin-bottom: 12px;
+		}
+
+		.legend-grid {
+			grid-template-columns: 1fr;
+			gap: 8px;
+		}
+
+		.legend-item {
+			padding: 6px 10px;
+		}
+
+		.legend-text {
+			font-size: 0.85rem;
+		}
+
 		.calendar-iframe-container {
 			height: 500px;
 		}
@@ -327,6 +431,27 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 			font-size: 1.2rem;
 		}
 
+		.calendar-legend {
+			padding: 15px 10px;
+		}
+
+		.legend-grid {
+			gap: 6px;
+		}
+
+		.legend-item {
+			padding: 5px 8px;
+		}
+
+		.legend-color {
+			width: 14px;
+			height: 14px;
+		}
+
+		.legend-text {
+			font-size: 0.8rem;
+		}
+
 		.calendar-iframe-container {
 			height: 450px;
 		}
@@ -359,6 +484,23 @@ Mohon maklumkan kekosongan dan cara bayaran. Terima kasih!`;
 
 	/* Extra small mobile */
 	@media (max-width: 360px) {
+		.calendar-legend {
+			padding: 12px 8px;
+		}
+
+		.legend-item {
+			padding: 4px 6px;
+		}
+
+		.legend-color {
+			width: 12px;
+			height: 12px;
+		}
+
+		.legend-text {
+			font-size: 0.75rem;
+		}
+
 		.calendar-iframe-container {
 			height: 400px;
 		}
