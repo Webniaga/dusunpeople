@@ -72,7 +72,7 @@
 <style>
 	.contact-content {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: 1fr;
 		gap: 30px;
 		max-width: 1000px;
 		margin: 0 auto;
@@ -80,7 +80,7 @@
 
 	.contact-info {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-template-columns: repeat(2, 1fr);
 		gap: 25px;
 	}
 
@@ -186,7 +186,6 @@
 	/* Responsive Design */
 	@media (max-width: 768px) {
 		.contact-content {
-			grid-template-columns: 1fr;
 			gap: 25px;
 		}
 		
